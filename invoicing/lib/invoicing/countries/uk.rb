@@ -8,11 +8,11 @@ module Invoicing
         end
         
         def tax_factor(params)
-          BigDecimal('1') + tax_rate(params).rate
+          BigDecimal('1') + tax_rate(params).rate_now.to_i
         end
         
         def tax_percent(params)
-          BigDecimal('100') * tax_rate(params).rate
+          BigDecimal('100') * tax_rate(params).rate_now.to_i
         end
         
         def apply_tax(params)
